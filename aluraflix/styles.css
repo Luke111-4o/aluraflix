@@ -1,0 +1,166 @@
+/* BODY */
+body {
+    color: white;
+    background: linear-gradient(135deg, #000000, #1c1c1c);
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 100px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    border-bottom: solid 2px rgb(42, 122, 228);
+    padding: 20px;
+    font-size: 36px;
+    color: rgb(42, 122, 228);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #121212;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInZoom 1.8s ease-in-out forwards;
+}
+
+/* ANIMAÇÃO HEADER */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CHAMADA COM PARALLAX */
+.chamada {
+    background: linear-gradient(135deg, rgba(184, 156, 213, 0.9), rgba(95, 68, 130, 0.9));
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInUpZoom 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ANIMAÇÃO CHAMADA */
+@keyframes fadeInUpZoom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.chamada-texto h2 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.chamada-texto p {
+    font-size: 22px;
+    color: #dcdcdc;
+}
+
+/* CATEGORIA */
+.categoria {
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUpZoom 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.categoria h2 {
+    color: rgb(42, 122, 228);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* SCROLL ANIMATION */
+.categoria-videos {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    opacity: 0;
+    animation: fadeInLeftZoom 2.8s ease-in-out forwards;
+    animation-delay: 1.2s;
+    scroll-behavior: smooth; /* Rolagem suave */
+}
+
+/* ANIMAÇÃO SCROLL */
+@keyframes fadeInLeftZoom {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.categoria-videos a {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.categoria-videos img {
+    opacity: 0.85;
+    height: 200px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ANIMAÇÃO DE HOVER CLEAN */
+.categoria-videos img:hover {
+    opacity: 1.0;
+    transform: scale(1.05); /* Removi a rotação para um design mais clean */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* FOOTER COM EFEITO STICKY */
+footer {
+    background-color: #121212;
+    color: #dcdcdc;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInZoom 2.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+/* ANIMAÇÃO FOOTER "SEGUINDO" */
+footer p {
+    font-size: 14px;
+    opacity: 0.8;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guiminamflix - Assista filmes e séries incríveis, incluindo Através do Aranhaverso.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Guiminamflix</title>
+</head>
+
+<body>
+    <header>
+        <h1>GUIMINAMFLIX</h1>
+    </header>
+
+    <main>
+        <section class="chamada parallax">
+            <div class="chamada-texto">
+                <h2>ATRAVÉS DO ARANHAVERSO</h2>
+                <p>#homem-aranha</p>
+            </div>
+
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2>Filmes e séries</h2>
+            <div class="categoria-videos">
+                <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
+                    <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" alt="Imagem do vídeo 1" loading="lazy" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8">
+                    <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" alt="Imagem do vídeo 2" loading="lazy" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=FvRmEapoHRc">
+                    <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" alt="Imagem do vídeo 3" loading="lazy" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw">
+                    <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" alt="Imagem do vídeo 4" loading="lazy" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=d4DzMNGoyis">
+                    <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" alt="Imagem do vídeo 5" loading="lazy" />
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Guiminamflix. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <!-- Script de rolagem infinita -->
+    <script>
+        const container = document.querySelector('.categoria-videos');
+        let videos = [...container.querySelectorAll('a')];
+
+        // Função para clonar os vídeos para rolagem infinita
+        function cloneVideos() {
+            videos.forEach(video => {
+                const clone = video.cloneNode(true);
+                container.appendChild(clone);
+            });
+        }
+
+        // Verifica se a rolagem chegou ao final para carregar mais vídeos
+        container.addEventListener('scroll', () => {
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+                cloneVideos();
+            }
+        });
+    </script>
+</body>
+
+</html>
